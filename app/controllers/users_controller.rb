@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path 
+      redirect_to root_path #同じファイルならrender :indexでも問題ないけど今回はmessagesのindexに遷移するからredirect_toになる。
     else 
       render :edit
     end
